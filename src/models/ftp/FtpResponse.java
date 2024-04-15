@@ -5,16 +5,23 @@ import java.util.Map;
 import models.interfaces.Response;
 
 
-public class FtpResponse implements Response{
+public class FTPResponse implements Response{
 	
 	private Map<String, String> header;
 	
 	private byte[] body;
-	
-	public FtpResponse(){
+		
+	public FTPResponse(){
 		System.out.println("*** ftpResponse ***");
 	}
 	
+	public FTPResponse(Map<String, String> header, byte[] body) {
+		super();
+		this.header = header;
+		this.body = body;
+		System.out.println("*** ftpResponse ***\n") ;
+	}
+
 	public Map<String, String> getHeader() {
 		return header;
 	}

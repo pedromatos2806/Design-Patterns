@@ -4,21 +4,22 @@ import java.util.Map;
 
 import models.interfaces.Request;
 
-public class HttpRequest implements Request{
+public class HTTPRequest implements Request{
 	
 	private Map<String, String> header;
 	
 	private byte[] body;
-
-	public HttpRequest() {
+	
+	public HTTPRequest() {
 		System.out.println("*** httpRequest ***");
 	}
 	
-	
-	public Map<String, String> getHeader() {
-		return header;
+	public HTTPRequest(Map<String, String> header, byte[] body) {
+		this.header = header;
+		this.body = body;
+		System.out.println("*** httpRequest ***\n") ;
 	}
-
+	
 	public void setHeader(Map<String, String> header) {
 		this.header = header;
 	}

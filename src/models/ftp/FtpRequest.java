@@ -4,15 +4,24 @@ import java.util.Map;
 
 import models.interfaces.Request;
 
-public class FtpRequest implements Request{
-	
+public class FTPRequest implements Request{
+
 	private Map<String, String> header;
 	
 	private byte[] body;
+	
+	public FTPRequest(Map<String, String> header, byte[] body) {
+		super();
+		this.header = header;
+		this.body = body;
+		System.out.println("*** ftpRequest ***\n") ;
+	}
 
-	public FtpRequest(){
+	public FTPRequest(){
 		System.out.println("*** ftpRequest ***");
 	}
+	
+
 	
 	public Map<String, String> getHeader() {
 		return header;

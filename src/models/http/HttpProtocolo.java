@@ -4,13 +4,24 @@ import models.interfaces.Protocolo;
 import models.interfaces.Request;
 import models.interfaces.Response;
 
-public class HttpProtocolo implements Protocolo{
+public class HTTPProtocolo implements Protocolo{
 
 	private String host;
 	
 	private Integer porta;
 		
+	public HTTPProtocolo() {}
 	
+	public HTTPProtocolo(String host, Integer porta) {
+		this.host = host;
+		this.porta = porta;
+	}
+	
+	public Protocolo init(String host, Integer porta) {
+		this.host = host;
+		this.porta = porta;
+		return this;
+	}
 	public String getHost() {
 		return host;
 	}
@@ -27,11 +38,6 @@ public class HttpProtocolo implements Protocolo{
 		this.porta = porta;
 	}
 
-	public Protocolo init(String host, Integer porta) {
-		this.host = host;
-		this.porta = porta;
-		return this;
-	}
 
 	public void open() {
 		// TODO Auto-generated method stub

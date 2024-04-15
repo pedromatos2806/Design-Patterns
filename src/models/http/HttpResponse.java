@@ -6,13 +6,21 @@ import java.util.Map;
 
 import models.interfaces.Response;
 
-public class HttpResponse implements Response{
+public class HTTPResponse implements Response{
+	
 	private Map<String, String> header;
 	
 	private byte[] body;
 	
-	public HttpResponse(){
+	public HTTPResponse(){
 		System.out.println("*** htpResponse ***");
+		
+	}
+	
+	public HTTPResponse(Map<String,String> header, byte[] body) {
+		this.header = header;
+		this.body = body;
+		System.out.println("*** htpResponse ***\n") ;
 	}
 	
 	public Map<String, String> getHeader() {
